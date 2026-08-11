@@ -93,7 +93,7 @@ export function ServiceTabs({
             tabIndex={isActive ? 0 : -1}
             onClick={() => onSelect(key)}
             onKeyDown={(event) => handleKeyDown(event, index)}
-            className={`flex cursor-pointer items-start gap-3.5 rounded-lg border border-line bg-white px-5 py-[18px] text-left transition-[box-shadow,transform] duration-150 hover:-translate-y-0.5 ${
+            className={`flex cursor-pointer items-start gap-3.5 rounded-lg border border-line bg-panel px-5 py-[18px] text-left transition-[box-shadow,transform] duration-150 hover:-translate-y-0.5 ${
               isActive ? "shadow-tab-active" : "shadow-tab"
             }`}
           >

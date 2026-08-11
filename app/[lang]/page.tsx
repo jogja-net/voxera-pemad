@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { BottomNav } from "@/components/bottom-nav";
 import { ServiceSection } from "@/components/service-section";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 
@@ -31,6 +32,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       </main>
 
       <SiteFooter dict={dict} />
+      <BottomNav dict={dict} />
     </>
   );
 }

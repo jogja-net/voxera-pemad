@@ -27,7 +27,7 @@ export function ServiceSection({ dict }: { dict: Dictionary }) {
   const interpreter = useInterpreterForm();
 
   return (
-    <>
+    <section id="services">
       <ServiceTabs active={active} onSelect={setActive} dict={dict} />
 
       <div
@@ -37,7 +37,7 @@ export function ServiceSection({ dict }: { dict: Dictionary }) {
         role="tabpanel"
         aria-labelledby={tabId(active)}
         tabIndex={0}
-        className="animate-panel-in mt-7 rounded-xl border border-line bg-white p-5 shadow-panel sm:p-8 lg:px-11 lg:py-10"
+        className="animate-panel-in mt-7 rounded-xl border border-line bg-panel p-5 shadow-panel sm:p-8 lg:px-11 lg:py-10"
       >
         {active === "validation" && (
           <ValidationPanel form={validation} dict={dict} />
@@ -53,6 +53,6 @@ export function ServiceSection({ dict }: { dict: Dictionary }) {
           <InterpreterPanel form={interpreter} dict={dict} />
         )}
       </div>
-    </>
+    </section>
   );
 }

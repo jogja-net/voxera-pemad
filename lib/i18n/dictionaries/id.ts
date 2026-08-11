@@ -25,6 +25,9 @@ export const id = {
     contact: "Hubungi Kami",
     switchLanguage: "Ganti bahasa ke Bahasa Inggris",
     menu: "Menu",
+    themeToggle: "Ganti tema warna",
+    themeLight: "Beralih ke tema terang",
+    themeDark: "Beralih ke tema gelap",
   },
 
   hero: {

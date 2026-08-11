@@ -1,28 +1,84 @@
 @import "tailwindcss";
 
-/* Voxera Corporate Core — tokens from DESIGN.md / design handoff */
-@theme {
-  --color-brand: #0047bb;
-  --color-brand-dark: #00328a;
-  --color-brand-ring: #c7d7f5;
-  --color-brand-light: #b3c5ff;
-  --color-ink: #0f172a;
-  --color-body: #475569;
-  --color-muted: #64748b;
-  --color-faint: #94a3b8;
-  --color-line: #e2e8f0;
-  --color-surface: #f7f9fb;
-  --color-tint: #f2f4f6;
-  --color-success: #059669;
-  --color-success-dark: #047857;
+/* Class-based dark mode: toggling `.dark` on <html> flips every token below. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --vx-brand: #0047bb;
+  --vx-brand-dark: #00328a;
+  --vx-brand-ring: #c7d7f5;
+  --vx-brand-light: #b3c5ff;
+  --vx-ink: #0f172a;
+  --vx-body: #475569;
+  --vx-muted: #64748b;
+  --vx-faint: #94a3b8;
+  --vx-line: #e2e8f0;
+  --vx-surface: #f7f9fb;
+  --vx-tint: #f2f4f6;
+  --vx-panel: #ffffff;
+  --vx-success: #059669;
+  --vx-success-dark: #047857;
+  --vx-footer: #0f172a;
+  --vx-footer-line: #e2e8f0;
+  --vx-footer-faint: #94a3b8;
+  --vx-footer-muted: #64748b;
+  --vx-selection: rgba(0, 71, 187, 0.14);
+  --vx-focus: #0047bb;
+  --vx-shadow-panel: 0 10px 20px rgba(15, 23, 42, 0.04);
+  --vx-shadow-tab: 0 1px 2px rgba(15, 23, 42, 0.03);
+  --vx-shadow-tab-active:
+    inset 0 0 0 2px #0047bb, 0 8px 18px rgba(15, 23, 42, 0.07);
+  color-scheme: light;
+}
+
+.dark {
+  --vx-brand: #3d6bff;
+  --vx-brand-dark: #2a54d8;
+  --vx-brand-ring: #2a3f63;
+  --vx-brand-light: #b3c5ff;
+  --vx-ink: #e7edf5;
+  --vx-body: #9aa7ba;
+  --vx-muted: #8a97ab;
+  --vx-faint: #64748b;
+  --vx-line: #1d2939;
+  --vx-surface: #0b1220;
+  --vx-tint: #16202f;
+  --vx-panel: #111a2e;
+  --vx-selection: rgba(61, 107, 255, 0.22);
+  --vx-focus: #3d6bff;
+  --vx-shadow-panel: 0 10px 20px rgba(0, 0, 0, 0.4);
+  --vx-shadow-tab: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --vx-shadow-tab-active:
+    inset 0 0 0 2px #3d6bff, 0 8px 18px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-brand: var(--vx-brand);
+  --color-brand-dark: var(--vx-brand-dark);
+  --color-brand-ring: var(--vx-brand-ring);
+  --color-brand-light: var(--vx-brand-light);
+  --color-ink: var(--vx-ink);
+  --color-body: var(--vx-body);
+  --color-muted: var(--vx-muted);
+  --color-faint: var(--vx-faint);
+  --color-line: var(--vx-line);
+  --color-surface: var(--vx-surface);
+  --color-tint: var(--vx-tint);
+  --color-panel: var(--vx-panel);
+  --color-success: var(--vx-success);
+  --color-success-dark: var(--vx-success-dark);
+  --color-footer: var(--vx-footer);
+  --color-footer-line: var(--vx-footer-line);
+  --color-footer-faint: var(--vx-footer-faint);
+  --color-footer-muted: var(--vx-footer-muted);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
-  --shadow-panel: 0 10px 20px rgba(15, 23, 42, 0.04);
-  --shadow-tab: 0 1px 2px rgba(15, 23, 42, 0.03);
-  --shadow-tab-active:
-    inset 0 0 0 2px #0047bb, 0 8px 18px rgba(15, 23, 42, 0.07);
+  --shadow-panel: var(--vx-shadow-panel);
+  --shadow-tab: var(--vx-shadow-tab);
+  --shadow-tab-active: var(--vx-shadow-tab-active);
 
   --animate-panel-in: panel-in 0.28s ease both;
 
@@ -40,18 +96,18 @@
 
 @layer base {
   body {
-    background: var(--color-surface);
-    color: var(--color-ink);
+    background: var(--vx-surface);
+    color: var(--vx-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
 
   ::selection {
-    background: rgba(0, 71, 187, 0.14);
+    background: var(--vx-selection);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-brand);
+    outline: 2px solid var(--vx-focus);
     outline-offset: 2px;
   }
 }

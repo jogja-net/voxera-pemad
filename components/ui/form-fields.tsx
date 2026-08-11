@@ -2,7 +2,7 @@ import type { ReactNode, SelectHTMLAttributes, TextareaHTMLAttributes } from "re
 import type { InputHTMLAttributes } from "react";
 
 export const controlClass =
-  "rounded border border-line bg-white text-[15px] text-ink transition-colors focus:border-brand focus:outline-none focus:shadow-[inset_0_0_0_1px_#0047bb]";
+  "rounded border border-line bg-panel text-[15px] text-ink transition-colors focus:border-brand focus:outline-none focus:shadow-[inset_0_0_0_1px_var(--vx-brand)]";
 
 export function FieldLabel({
   htmlFor,

@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import { LOCALES, LOCALE_TAGS, getDictionary, hasLocale } from "@/lib/i18n";
 
+const THEME_INIT_SCRIPT = `try{var t=localStorage.getItem("voxera-theme"),d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d)}catch(e){}`;
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -54,6 +56,9 @@ export default async function RootLayout({
       lang={lang}
       className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body>{children}</body>
     </html>
   );

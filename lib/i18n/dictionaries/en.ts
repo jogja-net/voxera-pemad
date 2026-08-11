@@ -17,6 +17,9 @@ export const en: Dictionary = {
     contact: "Contact Us",
     switchLanguage: "Switch language to Indonesian",
     menu: "Menu",
+    themeToggle: "Toggle color theme",
+    themeLight: "Switch to light theme",
+    themeDark: "Switch to dark theme",
   },
 
   hero: {

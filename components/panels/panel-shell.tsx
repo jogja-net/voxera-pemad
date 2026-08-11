@@ -26,7 +26,7 @@ export function ResultCard({
   children: ReactNode;
 }) {
   return (
-    <div className="animate-panel-in rounded-lg border border-brand-ring bg-[rgba(0,71,187,0.04)] px-[22px] py-[18px]">
+    <div className="animate-panel-in rounded-lg border border-brand-ring bg-[rgba(0,71,187,0.04)] px-[22px] py-[18px] dark:bg-brand-light/10">
       {title && <div className="mb-2 flex items-center gap-2.5">{title}</div>}
       <p className="font-mono text-xs leading-5 text-body">{children}</p>
     </div>

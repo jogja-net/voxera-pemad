@@ -49,8 +49,8 @@ export function UploadField({
         onClick={() => inputRef.current?.click()}
         className={
           isDropzone
-            ? "flex cursor-pointer items-center gap-3 rounded-xl border-2 border-dashed border-brand bg-[rgba(0,71,187,0.03)] p-5 text-left transition-colors hover:bg-[rgba(0,71,187,0.08)]"
-            : "flex cursor-pointer items-center gap-3 rounded-lg border border-line bg-white px-5 py-4 text-left transition-colors hover:border-brand-ring"
+            ? "flex cursor-pointer items-center gap-3 rounded-xl border-2 border-dashed border-brand bg-[rgba(0,71,187,0.03)] p-5 text-left transition-colors hover:bg-[rgba(0,71,187,0.08)] dark:bg-brand-light/10 dark:hover:bg-brand-light/15"
+            : "flex cursor-pointer items-center gap-3 rounded-lg border border-line bg-panel px-5 py-4 text-left transition-colors hover:border-brand-ring"
         }
       >
         {isDropzone ? (
