@@ -1,0 +1,60 @@
+import type { Metadata } from "next";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import { notFound } from "next/navigation";
+import "../globals.css";
+import { LOCALES, LOCALE_TAGS, getDictionary, hasLocale } from "@/lib/i18n";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["500"],
+  display: "swap",
+  variable: "--font-jetbrains-mono",
+});
+
+/** Both locales are prerendered at build time. */
+export function generateStaticParams() {
+  return LOCALES.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata({
+  params,
+}: LayoutProps<"/[lang]">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) notFound();
+
+  const dict = getDictionary(lang);
+
+  return {
+    title: dict.meta.title,
+    description: dict.meta.description,
+    alternates: {
+      canonical: `/${lang}`,
+      languages: Object.fromEntries(
+        LOCALES.map((locale) => [LOCALE_TAGS[locale], `/${locale}`]),
+      ),
+    },
+  };
+}
+
+export default async function RootLayout({
+  children,
+  params,
+}: LayoutProps<"/[lang]">) {
+  const { lang } = await params;
+  if (!hasLocale(lang)) notFound();
+
+  return (
+    <html
+      lang={lang}
+      className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
+    >
+      <body>{children}</body>
+    </html>
+  );
+}

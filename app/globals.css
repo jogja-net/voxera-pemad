@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* Voxera Corporate Core — tokens from DESIGN.md / design handoff */
+@theme {
+  --color-brand: #0047bb;
+  --color-brand-dark: #00328a;
+  --color-brand-ring: #c7d7f5;
+  --color-brand-light: #b3c5ff;
+  --color-ink: #0f172a;
+  --color-body: #475569;
+  --color-muted: #64748b;
+  --color-faint: #94a3b8;
+  --color-line: #e2e8f0;
+  --color-surface: #f7f9fb;
+  --color-tint: #f2f4f6;
+  --color-success: #059669;
+  --color-success-dark: #047857;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --shadow-panel: 0 10px 20px rgba(15, 23, 42, 0.04);
+  --shadow-tab: 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-tab-active:
+    inset 0 0 0 2px #0047bb, 0 8px 18px rgba(15, 23, 42, 0.07);
+
+  --animate-panel-in: panel-in 0.28s ease both;
+
+  @keyframes panel-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@layer base {
+  body {
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: rgba(0, 71, 187, 0.14);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}

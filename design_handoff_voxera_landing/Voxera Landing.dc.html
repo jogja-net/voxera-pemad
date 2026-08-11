@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f7f9fb;font-family:Inter,system-ui,sans-serif;color:#0f172a;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#0047bb;text-decoration:none}
+a:hover{color:#00328a}
+::selection{background:rgba(0,71,187,.14)}
+:focus-visible{outline:2px solid #0047bb;outline-offset:2px}
+input,select,textarea,button{font-family:inherit}
+@keyframes vxfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,.88); backdrop-filter:blur(12px); border-bottom:1px solid #e2e8f0">
+  <div style="max-width:1240px; margin:0 auto; padding:0 40px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:32px">
+    <a href="#top" style="font-size:22px; font-weight:700; letter-spacing:-0.03em; color:#0047bb">Voxera</a>
+    <nav style="display:flex; align-items:center; gap:28px">
+      <a href="#services" style="font-size:14px; font-weight:600; color:#0047bb; border-bottom:2px solid #0047bb; padding-bottom:4px">Services</a>
+      <a href="#contact" style="font-size:14px; font-weight:500; color:#475569" style-hover="color:#0047bb">Help &amp; Support</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:10px">
+      <a href="#top" style="display:inline-flex; align-items:center; height:40px; padding:0 18px; border-radius:4px; border:1px solid #0047bb; color:#0047bb; font-size:14px; font-weight:600" style-hover="background:rgba(0,71,187,.06)">Client Portal</a>
+      <a href="#contact" style="display:inline-flex; align-items:center; height:40px; padding:0 18px; border-radius:4px; background:#0047bb; color:#ffffff; font-size:14px; font-weight:600" style-hover="background:#00328a">Contact Us</a>
+    </div>
+  </div>
+</header>
+
+<main id="top" style="max-width:1240px; margin:0 auto; padding:40px 40px 88px">
+  <div style="display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center; margin-bottom:32px">
+    <h1 style="margin:0; font-size:34px; line-height:42px; font-weight:700; letter-spacing:-0.02em; color:#0f172a">Pilih layanan yang sesuai kebutuhan Anda.</h1>
+    <p style="margin:0; max-width:680px; font-size:16px; line-height:26px; color:#475569; text-wrap:pretty">Mulai dari validasi dokumen bertenaga AI, smart generation, penerjemahan tersumpah, hingga interpreter profesional. Voxera hadir untuk menjadi mitra global Anda dalam menembus batas bahasa dan legalitas dokumen.</p>
+  </div>
+
+  <div id="services" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:16px">
+    <button type="button" onClick="{{ go0 }}" style="cursor:pointer; text-align:left; background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start; transition:box-shadow .18s, transform .18s; box-shadow: {{ ring0 }}" style-hover="transform:translateY(-2px)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0047bb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:2px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 15l2 2 4-4"></path></svg>
+      <span style="display:flex; flex-direction:column; gap:4px">
+        <span style="font-size:16px; font-weight:600; color:#0f172a">Validation</span>
+        <span style="font-size:13px; line-height:19px; color:#64748b">Automatic Document Validation</span>
+      </span>
+    </button>
+    <button type="button" onClick="{{ go1 }}" style="cursor:pointer; text-align:left; background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start; transition:box-shadow .18s, transform .18s; box-shadow: {{ ring1 }}" style-hover="transform:translateY(-2px)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0047bb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:2px"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+      <span style="display:flex; flex-direction:column; gap:4px">
+        <span style="font-size:16px; font-weight:600; color:#0f172a">Generation</span>
+        <span style="font-size:13px; line-height:19px; color:#64748b">Smart Document Generation</span>
+      </span>
+    </button>
+    <button type="button" onClick="{{ go2 }}" style="cursor:pointer; text-align:left; background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start; transition:box-shadow .18s, transform .18s; box-shadow: {{ ring2 }}" style-hover="transform:translateY(-2px)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0047bb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:2px"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"></path></svg>
+      <span style="display:flex; flex-direction:column; gap:4px">
+        <span style="font-size:16px; font-weight:600; color:#0f172a">Translation</span>
+        <span style="font-size:13px; line-height:19px; color:#64748b">Document Translation Service</span>
+      </span>
+    </button>
+    <button type="button" onClick="{{ go3 }}" style="cursor:pointer; text-align:left; background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start; transition:box-shadow .18s, transform .18s; box-shadow: {{ ring3 }}" style-hover="transform:translateY(-2px)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0047bb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:2px"><path d="M12 3v18"></path><path d="M5 7h14"></path><path d="M7 21h10"></path><path d="M5 7l-3 7a3 3 0 0 0 6 0z"></path><path d="M19 7l-3 7a3 3 0 0 0 6 0z"></path></svg>
+      <span style="display:flex; flex-direction:column; gap:4px">
+        <span style="font-size:16px; font-weight:600; color:#0f172a">Sworn Translation</span>
+        <span style="font-size:13px; line-height:19px; color:#64748b">Sworn Translation Request</span>
+      </span>
+    </button>
+    <button type="button" onClick="{{ go4 }}" style="cursor:pointer; text-align:left; background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start; transition:box-shadow .18s, transform .18s; box-shadow: {{ ring4 }}" style-hover="transform:translateY(-2px)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0047bb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:2px"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg>
+      <span style="display:flex; flex-direction:column; gap:4px">
+        <span style="font-size:16px; font-weight:600; color:#0f172a">Interpreter</span>
+        <span style="font-size:13px; line-height:19px; color:#64748b">Oral Translation Services</span>
+      </span>
+    </button>
+  </div>
+
+  <div style="margin-top:28px; background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; box-shadow:0 10px 20px rgba(15,23,42,.04); padding:40px 44px">
+
+    <sc-if value="{{ isValidation }}" hint-placeholder-val="{{ true }}">
+      <div style="animation:vxfade .28s ease both; display:flex; flex-direction:column; gap:22px">
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <h2 style="margin:0; font-size:30px; font-weight:700; letter-spacing:-0.02em; color:#0f172a">Document Validation Service</h2>
+          <p style="margin:0; font-size:16px; line-height:24px; color:#475569">Instantly analyze and validate your documents with the power of AI. Just drag and drop your file below.</p>
+        </div>
+        <input type="file" ref="{{ refA }}" onChange="{{ onFileA }}" style="display:none">
+        <input type="file" ref="{{ refB }}" onChange="{{ onFileB }}" style="display:none">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px">
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <span style="font-size:14px; font-weight:600; color:#0f172a">Upload Document 1</span>
+            <button type="button" onClick="{{ pickA }}" style="cursor:pointer; display:flex; align-items:center; gap:12px; padding:20px; border:2px dashed #0047bb; border-radius:12px; background:rgba(0,71,187,.03); text-align:left" style-hover="background:rgba(0,71,187,.08)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0047bb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7L11 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"></path></svg>
+              <span style="display:flex; flex-direction:column; gap:4px">
+                <span style="font-size:15px; font-weight:600; color:#0047bb">Choose File</span>
+                <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#64748b">{{ nameA }}</span>
+              </span>
+            </button>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <span style="font-size:14px; font-weight:600; color:#0f172a">Upload Document 2</span>
+            <button type="button" onClick="{{ pickB }}" style="cursor:pointer; display:flex; align-items:center; gap:12px; padding:20px; border:2px dashed #0047bb; border-radius:12px; background:rgba(0,71,187,.03); text-align:left" style-hover="background:rgba(0,71,187,.08)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0047bb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7L11 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"></path></svg>
+              <span style="display:flex; flex-direction:column; gap:4px">
+                <span style="font-size:15px; font-weight:600; color:#0047bb">Choose File</span>
+                <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#64748b">{{ nameB }}</span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <label style="display:flex; align-items:flex-start; gap:12px; padding:18px 20px; border:1px solid #e2e8f0; border-radius:8px; background:#f7f9fb; cursor:pointer" style-hover="border-color:#c7d7f5">
+          <input type="checkbox" checked="{{ scanned }}" onChange="{{ toggleScanned }}" style="width:18px; height:18px; accent-color:#0047bb; margin:2px 0 0">
+          <span style="display:flex; flex-direction:column; gap:4px">
+            <span style="font-size:15px; font-weight:600; color:#0f172a">My document is a scanned image</span>
+            <span style="font-size:13px; line-height:20px; color:#64748b">Enable for best results on scanned documents or images.</span>
+          </span>
+        </label>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 20px; background:#f2f4f6; border-radius:8px">
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.08em; color:#64748b">WORD COUNT</span>
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:18px; font-weight:500; color:#0047bb">{{ words }}</span>
+        </div>
+        <button type="button" onClick="{{ runValidate }}" style="cursor:pointer; width:100%; height:52px; border:none; border-radius:4px; background:#0047bb; color:#ffffff; font-size:15px; font-weight:600; transition:background .18s" style-hover="background:#00328a">{{ validateLabel }}</button>
+        <sc-if value="{{ validated }}" hint-placeholder-val="{{ false }}">
+          <div style="border:1px solid #c7d7f5; background:rgba(0,71,187,.04); border-radius:8px; padding:18px 22px; animation:vxfade .3s ease both">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+              <span style="font-size:15px; font-weight:600; color:#0f172a">Validation complete</span>
+            </div>
+            <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; line-height:20px; color:#475569">{{ validateLine }}</p>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isGeneration }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:vxfade .28s ease both; display:flex; flex-direction:column; gap:22px">
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <h2 style="margin:0; font-size:30px; font-weight:700; letter-spacing:-0.02em; color:#0f172a">Document Generation Service</h2>
+          <p style="margin:0; font-size:16px; line-height:24px; color:#475569">Select a document type and fill out the form to automatically create your document.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <label style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.05em; color:#64748b">DOCUMENT DESCRIPTION (PROMPT)</label>
+          <textarea onChange="{{ onPrompt }}" onInput="{{ onPrompt }}" rows="7" placeholder="Example: &quot;Create a simple employment contract for a graphic designer...&quot;" style="width:100%; padding:16px; border:1px solid #e2e8f0; border-radius:4px; font-size:15px; line-height:24px; color:#0f172a; resize:vertical; background:#ffffff" style-focus="border-color:#0047bb; outline:none; box-shadow:inset 0 0 0 1px #0047bb"></textarea>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 20px; background:#f2f4f6; border-radius:8px">
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.08em; color:#64748b">WORD COUNT</span>
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:18px; font-weight:500; color:#0047bb">{{ promptWords }}</span>
+        </div>
+        <button type="button" onClick="{{ runGenerate }}" style="cursor:pointer; width:100%; height:52px; border:none; border-radius:4px; background:#0047bb; color:#ffffff; font-size:15px; font-weight:600; transition:background .18s" style-hover="background:#00328a">{{ generateLabel }}</button>
+        <sc-if value="{{ generated }}" hint-placeholder-val="{{ false }}">
+          <div style="border:1px solid #c7d7f5; background:rgba(0,71,187,.04); border-radius:8px; padding:18px 22px; animation:vxfade .3s ease both">
+            <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; line-height:20px; color:#475569">DRAFT READY · FORMAT DOCX · {{ promptWords }} WORDS IN PROMPT · REVIEW BEFORE SIGNING</p>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isTranslation }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:vxfade .28s ease both; display:flex; flex-direction:column; gap:22px">
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <h2 style="margin:0; font-size:30px; font-weight:700; letter-spacing:-0.02em; color:#0f172a">Document Translation Service</h2>
+          <p style="margin:0; font-size:16px; line-height:24px; color:#475569">Upload a document (.txt, .pdf, .docx, .jpg, .png) to be translated.</p>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px">
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <label style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.05em; color:#64748b">FROM LANGUAGE</label>
+            <select value="{{ fromLang }}" onChange="{{ onFrom }}" style="height:46px; padding:0 14px; border:1px solid #e2e8f0; border-radius:4px; background:#ffffff; font-size:15px; color:#0f172a; cursor:pointer" style-focus="border-color:#0047bb; outline:none">
+              <option>Indonesian</option><option>English</option><option>Japanese</option><option>Korean</option><option>Mandarin</option><option>German</option><option>Arabic</option>
+            </select>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <label style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.05em; color:#64748b">TO LANGUAGE</label>
+            <select value="{{ toLang }}" onChange="{{ onTo }}" style="height:46px; padding:0 14px; border:1px solid #e2e8f0; border-radius:4px; background:#ffffff; font-size:15px; color:#0f172a; cursor:pointer" style-focus="border-color:#0047bb; outline:none">
+              <option>English</option><option>Indonesian</option><option>Japanese</option><option>Korean</option><option>Mandarin</option><option>German</option><option>Arabic</option>
+            </select>
+          </div>
+        </div>
+        <input type="file" ref="{{ refT }}" onChange="{{ onFileT }}" style="display:none">
+        <input type="file" ref="{{ refC }}" onChange="{{ onFileC }}" style="display:none">
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <span style="font-size:14px; font-weight:600; color:#0f172a">Upload Document</span>
+          <button type="button" onClick="{{ pickT }}" style="cursor:pointer; display:flex; align-items:center; gap:12px; padding:20px; border:2px dashed #0047bb; border-radius:12px; background:rgba(0,71,187,.03); text-align:left" style-hover="background:rgba(0,71,187,.08)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0047bb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7L11 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"></path></svg>
+            <span style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:15px; font-weight:600; color:#0047bb">Choose File</span>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#64748b">{{ nameT }}</span>
+            </span>
+          </button>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <span style="font-size:14px; font-weight:600; color:#0f172a">Context File (Optional)</span>
+          <button type="button" onClick="{{ pickC }}" style="cursor:pointer; display:flex; align-items:center; gap:12px; padding:16px 20px; border:1px solid #e2e8f0; border-radius:8px; background:#ffffff; text-align:left" style-hover="border-color:#c7d7f5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a5 5 0 0 1-7.07-7.07l9.19-9.19a3.5 3.5 0 1 1 4.95 4.95L10.6 17.83"></path></svg>
+            <span style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:15px; font-weight:600; color:#0f172a">Choose File</span>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#64748b">{{ nameC }}</span>
+            </span>
+          </button>
+          <span style="font-size:13px; line-height:20px; color:#64748b">Provide a glossary or style reference. This file will not be translated or charged.</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 20px; background:#f2f4f6; border-radius:8px">
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.08em; color:#64748b">WORD COUNT</span>
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:18px; font-weight:500; color:#0047bb">{{ transWords }}</span>
+        </div>
+        <button type="button" onClick="{{ runTranslate }}" style="cursor:pointer; width:100%; height:52px; border:none; border-radius:4px; background:#0047bb; color:#ffffff; font-size:15px; font-weight:600; transition:background .18s" style-hover="background:#00328a">{{ translateLabel }}</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isSworn }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:vxfade .28s ease both; display:flex; flex-direction:column; gap:22px">
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <h2 style="margin:0; font-size:30px; font-weight:700; letter-spacing:-0.02em; color:#0f172a">Sworn Translation Request</h2>
+          <p style="margin:0; font-size:16px; line-height:24px; color:#475569">Upload your document for a sworn translation. The final result will be sent to your email.</p>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px">
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <label style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.05em; color:#64748b">FROM LANGUAGE</label>
+            <select value="{{ swornFrom }}" onChange="{{ onSwornFrom }}" style="height:46px; padding:0 14px; border:1px solid #e2e8f0; border-radius:4px; background:#ffffff; font-size:15px; color:#0f172a; cursor:pointer" style-focus="border-color:#0047bb; outline:none">
+              <option>Indonesian</option><option>English</option><option>Japanese</option><option>Korean</option><option>Mandarin</option><option>German</option>
+            </select>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <label style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.05em; color:#64748b">TO LANGUAGE</label>
+            <select value="{{ swornTo }}" onChange="{{ onSwornTo }}" style="height:46px; padding:0 14px; border:1px solid #e2e8f0; border-radius:4px; background:#ffffff; font-size:15px; color:#0f172a; cursor:pointer" style-focus="border-color:#0047bb; outline:none">
+              <option>Korean</option><option>English</option><option>Indonesian</option><option>Japanese</option><option>Mandarin</option><option>German</option>
+            </select>
+          </div>
+        </div>
+        <p style="margin:0; font-size:13px; color:#64748b">If the target language is not available, <a href="#contact" style="font-weight:600">please contact us</a>.</p>
+        <input type="file" ref="{{ refS }}" onChange="{{ onFileS }}" style="display:none">
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <span style="font-size:14px; font-weight:600; color:#0f172a">Upload Document</span>
+          <button type="button" onClick="{{ pickS }}" style="cursor:pointer; display:flex; align-items:center; gap:12px; padding:20px; border:2px dashed #0047bb; border-radius:12px; background:rgba(0,71,187,.03); text-align:left" style-hover="background:rgba(0,71,187,.08)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0047bb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7L11 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"></path></svg>
+            <span style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:15px; font-weight:600; color:#0047bb">Choose File</span>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#64748b">{{ nameS }}</span>
+            </span>
+          </button>
+          <span style="font-size:13px; line-height:20px; color:#64748b">Can upload PDF, DOCX, TXT, or Image. Maximum 15 pages per file. Ensure the file is clearly readable before submitting.</span>
+        </div>
+        <button type="button" onClick="{{ calcCost }}" style="cursor:pointer; width:100%; height:48px; border:1px solid #0047bb; border-radius:4px; background:#ffffff; color:#0047bb; font-size:15px; font-weight:600; transition:background .18s" style-hover="background:rgba(0,71,187,.06)">Calculate Estimated Cost</button>
+        <div style="border:1px solid #e2e8f0; border-radius:8px; padding:22px 24px; display:flex; flex-direction:column; gap:16px">
+          <div style="display:flex; justify-content:space-between; gap:16px">
+            <span style="font-size:15px; font-weight:600; color:#0f172a">Total Pages</span>
+            <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:15px; color:#0f172a">{{ pages }}</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px">
+            <span style="font-size:15px; color:#475569">Est. Completion</span>
+            <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:15px; color:#0f172a">{{ eta }}</span>
+          </div>
+          <p style="margin:0; font-size:13px; line-height:20px; color:#64748b">Completion time depends on translation order queue. Need faster processing? <a href="#contact" style="font-weight:600">Contact admin after ordering for priority service.</a></p>
+          <label style="display:flex; align-items:center; gap:12px; padding-top:16px; border-top:1px dashed #e2e8f0; cursor:pointer">
+            <input type="checkbox" checked="{{ hardCopy }}" onChange="{{ toggleHardCopy }}" style="width:18px; height:18px; accent-color:#0047bb">
+            <span style="font-size:15px; font-weight:600; color:#0f172a">Hard Copy Shipping</span>
+            <span style="font-size:13px; color:#64748b">+ Rp 50.000</span>
+          </label>
+          <div style="background:#f2f4f6; border-radius:8px; padding:16px 20px; display:flex; flex-direction:column; gap:10px">
+            <div style="display:flex; justify-content:space-between; gap:16px">
+              <span style="font-size:14px; color:#475569">Translation Cost</span>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:14px; color:#475569">{{ transCost }}</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; gap:16px; align-items:baseline">
+              <span style="font-size:16px; font-weight:700; color:#0f172a">Total Cost</span>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:20px; font-weight:500; color:#0047bb">{{ totalCost }}</span>
+            </div>
+          </div>
+        </div>
+        <button type="button" onClick="{{ submitSworn }}" style="cursor:pointer; width:100%; height:52px; border:none; border-radius:4px; background:#0047bb; color:#ffffff; font-size:15px; font-weight:600; transition:background .18s" style-hover="background:#00328a">{{ swornLabel }}</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isInterpreter }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:vxfade .28s ease both; display:flex; flex-direction:column; gap:22px">
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <h2 style="margin:0; font-size:30px; font-weight:700; letter-spacing:-0.02em; color:#0f172a">Interpreter Services</h2>
+          <p style="margin:0; font-size:16px; line-height:26px; color:#475569; text-wrap:pretty">We provide professional oral translation services to support your cross-language communication in real-time. Suitable for conferences, business meetings, legal support, or technical visits. Please consult your specific language pairing, duration, and location needs directly with our team.</p>
+        </div>
+        <div style="border-left:3px solid #0047bb; background:#f2f4f6; border-radius:0 8px 8px 0; padding:20px 24px; display:flex; flex-direction:column; gap:14px">
+          <span style="font-size:15px; font-weight:700; color:#0f172a">Available Service Types:</span>
+          <div style="display:flex; flex-direction:column; gap:5px">
+            <span style="font-size:15px; font-weight:600; color:#0f172a">Simultaneous Interpretation</span>
+            <span style="font-size:14px; line-height:22px; color:#475569">Interpreter translates into the target language as quickly as possible while the source speaker keeps speaking.</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:5px">
+            <span style="font-size:15px; font-weight:600; color:#0f172a">Consecutive Interpretation</span>
+            <span style="font-size:14px; line-height:22px; color:#475569">Interpreter speaks after the source speaker has finished speaking.</span>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <label style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.05em; color:#64748b">REQUIRED LANGUAGE</label>
+          <select value="{{ interLang }}" onChange="{{ onInterLang }}" style="height:46px; padding:0 14px; border:1px solid #e2e8f0; border-radius:4px; background:#ffffff; font-size:15px; color:#0f172a; cursor:pointer" style-focus="border-color:#0047bb; outline:none">
+            <option>-- Select Language --</option><option>English</option><option>Japanese</option><option>Korean</option><option>Mandarin</option><option>German</option><option>Arabic</option>
+          </select>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px">
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <label style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.05em; color:#64748b">START DATE / EVENT DATE</label>
+            <input type="date" style="height:46px; padding:0 14px; border:1px solid #e2e8f0; border-radius:4px; background:#ffffff; font-size:15px; color:#0f172a" style-focus="border-color:#0047bb; outline:none">
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px">
+            <label style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.05em; color:#64748b">DURATION</label>
+            <input type="text" placeholder="E.g., 4 Hours, 2 Days, 1 Week" style="height:46px; padding:0 14px; border:1px solid #e2e8f0; border-radius:4px; background:#ffffff; font-size:15px; color:#0f172a" style-focus="border-color:#0047bb; outline:none">
+          </div>
+        </div>
+        <a href="#contact" style="display:flex; align-items:center; justify-content:center; gap:10px; height:52px; border-radius:4px; background:#059669; color:#ffffff; font-size:15px; font-weight:600" style-hover="background:#047857; color:#ffffff">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5a8.38 8.38 0 0 1-4-1L3 21l2-5.5a8.38 8.38 0 0 1-1-4a8.38 8.38 0 0 1 8.5-8.5A8.38 8.38 0 0 1 21 11.5z"></path></svg>
+          Contact Our Team via WhatsApp
+        </a>
+      </div>
+    </sc-if>
+
+  </div>
+</main>
+
+<footer id="contact" style="background:#0f172a; color:#e2e8f0; padding:72px 40px 40px">
+  <div style="max-width:1240px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:48px">
+    <div style="display:flex; flex-direction:column; gap:12px">
+      <span style="font-size:24px; font-weight:700; letter-spacing:-0.02em; color:#ffffff">VOXERA</span>
+      <span style="font-size:15px; line-height:24px; color:#94a3b8">Smart Language &amp; Document Solutions</span>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:14px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.12em; color:#64748b">QUICK LINKS</span>
+      <a href="#top" style="font-size:15px; color:#e2e8f0" style-hover="color:#b3c5ff">Home</a>
+      <a href="#top" style="font-size:15px; color:#e2e8f0" style-hover="color:#b3c5ff">About Us</a>
+      <a href="#services" style="font-size:15px; color:#e2e8f0" style-hover="color:#b3c5ff">Services</a>
+      <a href="#contact" style="font-size:15px; color:#e2e8f0" style-hover="color:#b3c5ff">Contact Us</a>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:14px">
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.12em; color:#64748b">OUR ADDRESS</span>
+      <span style="font-size:15px; line-height:24px; color:#e2e8f0">PT PéMad International Transearch</span>
+      <span style="font-size:15px; line-height:24px; color:#94a3b8">Ruko Trimukti Square<br>Jl. Kaliurang Km. 10, Jl. Ngalangan Raya No. 8-10</span>
+      <span style="font-size:15px; line-height:24px; color:#94a3b8">Telp: (0274) 7377040</span>
+      <span style="font-size:15px; line-height:24px; color:#94a3b8">Jam Operasional: Buka hingga 16.00 WIB</span>
+      <span style="font-size:13px; line-height:20px; color:#64748b">(Melayani layanan di tempat dan online)</span>
+    </div>
+  </div>
+  <div style="max-width:1240px; margin:56px auto 0; padding-top:24px; border-top:1px solid rgba(226,232,240,.12); display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between">
+    <span style="font-size:13px; color:#64748b">© 2026 Voxera — PT PéMad International Transearch.</span>
+    <span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:0.08em; color:#64748b">MADE FOR GLOBAL DOCUMENTS</span>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280},&quot;defaultTab&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Validation&quot;,&quot;Generation&quot;,&quot;Translation&quot;,&quot;Sworn Translation&quot;,&quot;Interpreter&quot;],&quot;default&quot;:&quot;Validation&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+class Component extends DCLogic {
+  state = {
+    tab: 0, fA: null, fB: null, scanned: true, vStatus: 'idle',
+    prompt: '', gStatus: 'idle',
+    fromLang: 'Indonesian', toLang: 'English', fT: null, fC: null, tStatus: 'idle',
+    swornFrom: 'Indonesian', swornTo: 'Korean', fS: null, hardCopy: false, calced: false, sStatus: 'idle',
+    interLang: '-- Select Language --'
+  };
+
+  componentDidMount() {
+    const names = ['Validation', 'Generation', 'Translation', 'Sworn Translation', 'Interpreter'];
+    const i = names.indexOf(this.props.defaultTab);
+    if (i > 0) this.setState({ tab: i });
+  }
+
+  words(files) {
+    return files.filter(Boolean).reduce((n, f) => n + Math.max(1, Math.round(f.size / 6.4)), 0);
+  }
+  file(key, e) {
+    const f = e.target.files && e.target.files[0];
+    if (f) this.setState({ [key]: f });
+  }
+  ring(i) {
+    return this.state.tab === i
+      ? 'inset 0 0 0 2px #0047bb, 0 8px 18px rgba(15,23,42,.07)'
+      : '0 1px 2px rgba(15,23,42,.03)';
+  }
+  run(key, done, ms) {
+    if (this.state[key] === 'running') return;
+    this.setState({ [key]: 'running' });
+    clearTimeout(this['t_' + key]);
+    this['t_' + key] = setTimeout(() => this.setState({ [key]: done }), ms || 1200);
+  }
+
+  renderVals() {
+    const s = this.state;
+    const n = x => x.toLocaleString('en-US');
+    const rp = x => 'Rp ' + x.toLocaleString('id-ID');
+    const pages = s.calced && s.fS ? Math.max(1, Math.min(15, Math.ceil(s.fS.size / 2400))) : 0;
+    const base = pages * 120000;
+    const total = base + (s.hardCopy ? 50000 : 0);
+    const promptWords = s.prompt.trim() ? s.prompt.trim().split(/\s+/).length : 0;
+
+    return {
+      isValidation: s.tab === 0, isGeneration: s.tab === 1, isTranslation: s.tab === 2,
+      isSworn: s.tab === 3, isInterpreter: s.tab === 4,
+      ring0: this.ring(0), ring1: this.ring(1), ring2: this.ring(2), ring3: this.ring(3), ring4: this.ring(4),
+      go0: () => this.setState({ tab: 0 }), go1: () => this.setState({ tab: 1 }),
+      go2: () => this.setState({ tab: 2 }), go3: () => this.setState({ tab: 3 }),
+      go4: () => this.setState({ tab: 4 }),
+
+      nameA: s.fA ? s.fA.name : 'No file chosen',
+      nameB: s.fB ? s.fB.name : 'No file chosen',
+      scanned: s.scanned,
+      words: n(this.words([s.fA, s.fB])),
+      validated: s.vStatus === 'done',
+      validateLabel: s.vStatus === 'running' ? 'Validating…' : 'Validate Now',
+      validateLine: 'MODE ' + (s.scanned ? 'OCR / SCANNED' : 'NATIVE TEXT') + ' · FILES ' +
+        [s.fA, s.fB].filter(Boolean).length + ' · WORDS ' + n(this.words([s.fA, s.fB])) +
+        ' · NO STRUCTURAL ISSUES DETECTED',
+      refA: el => { this.iA = el; }, refB: el => { this.iB = el; },
+      pickA: () => this.iA && this.iA.click(), pickB: () => this.iB && this.iB.click(),
+      onFileA: e => this.file('fA', e), onFileB: e => this.file('fB', e),
+      toggleScanned: e => this.setState({ scanned: e.target.checked }),
+      runValidate: () => this.run('vStatus', 'done'),
+
+      promptWords: n(promptWords),
+      onPrompt: e => this.setState({ prompt: e.target.value, gStatus: 'idle' }),
+      generated: s.gStatus === 'done',
+      generateLabel: s.gStatus === 'running' ? 'Generating…' : 'Generate Document',
+      runGenerate: () => this.run('gStatus', 'done', 1400),
+
+      fromLang: s.fromLang, toLang: s.toLang,
+      onFrom: e => this.setState({ fromLang: e.target.value }),
+      onTo: e => this.setState({ toLang: e.target.value }),
+      nameT: s.fT ? s.fT.name : 'No file chosen',
+      nameC: s.fC ? s.fC.name : 'No file chosen',
+      transWords: n(this.words([s.fT])),
+      refT: el => { this.iT = el; }, refC: el => { this.iC = el; },
+      pickT: () => this.iT && this.iT.click(), pickC: () => this.iC && this.iC.click(),
+      onFileT: e => this.file('fT', e), onFileC: e => this.file('fC', e),
+      translateLabel: s.tStatus === 'running' ? 'Translating…' : s.tStatus === 'done' ? 'Translation queued ✓' : 'Translate Now',
+      runTranslate: () => this.run('tStatus', 'done'),
+
+      swornFrom: s.swornFrom, swornTo: s.swornTo,
+      onSwornFrom: e => this.setState({ swornFrom: e.target.value }),
+      onSwornTo: e => this.setState({ swornTo: e.target.value }),
+      nameS: s.fS ? s.fS.name : 'No files selected',
+      refS: el => { this.iS = el; }, pickS: () => this.iS && this.iS.click(),
+      onFileS: e => this.setState({ fS: (e.target.files && e.target.files[0]) || s.fS, calced: false }),
+      hardCopy: s.hardCopy,
+      toggleHardCopy: e => this.setState({ hardCopy: e.target.checked }),
+      calcCost: () => this.setState({ calced: true }),
+      pages: pages ? pages + ' pages' : '–',
+      eta: pages ? (pages <= 3 ? '2–3 working days' : pages <= 8 ? '4–5 working days' : '6–8 working days') : '–',
+      transCost: rp(base), totalCost: rp(total),
+      swornLabel: s.sStatus === 'running' ? 'Submitting…' : s.sStatus === 'done' ? 'Request submitted ✓' : 'Submit Request',
+      submitSworn: () => this.run('sStatus', 'done'),
+
+      interLang: s.interLang,
+      onInterLang: e => this.setState({ interLang: e.target.value })
+    };
+  }
+
+  componentWillUnmount() {
+    ['vStatus', 'gStatus', 'tStatus', 'sStatus'].forEach(k => clearTimeout(this['t_' + k]));
+  }
+}
+</script>
+</body>
+</html>
