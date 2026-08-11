@@ -24,6 +24,7 @@ export const id = {
     clientPortal: "Portal Klien",
     contact: "Hubungi Kami",
     switchLanguage: "Ganti bahasa ke Bahasa Inggris",
+    menu: "Menu",
   },
 
   hero: {

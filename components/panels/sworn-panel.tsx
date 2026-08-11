@@ -38,7 +38,7 @@ export function SwornPanel({
     <div className="flex flex-col gap-[22px]">
       <PanelHeading title={t.title}>{t.intro}</PanelHeading>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-[18px]">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(240px,100%),1fr))] gap-[18px]">
         <SelectField
           id="sworn-from"
           label={dict.common.fromLanguage}

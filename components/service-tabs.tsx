@@ -75,7 +75,7 @@ export function ServiceTabs({
       ref={listRef}
       role="tablist"
       aria-label={dict.tabs.ariaLabel}
-      className="grid grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-4"
+      className="grid grid-cols-[repeat(auto-fit,minmax(min(190px,100%),1fr))] gap-4"
     >
       {SERVICE_KEYS.map((key, index) => {
         const isActive = key === active;

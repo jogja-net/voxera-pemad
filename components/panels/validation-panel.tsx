@@ -23,7 +23,7 @@ export function ValidationPanel({
     <div className="flex flex-col gap-[22px]">
       <PanelHeading title={t.title}>{t.intro}</PanelHeading>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-[18px]">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(260px,100%),1fr))] gap-[18px]">
         <UploadField
           label={t.uploadFirst}
           file={form.fileA}

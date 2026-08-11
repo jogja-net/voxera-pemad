@@ -19,7 +19,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         className="mx-auto max-w-[1240px] px-4 pt-10 pb-[88px] sm:px-6 lg:px-10"
       >
         <div className="mb-8 flex flex-col items-center gap-3 text-center">
-          <h1 className="text-[28px] leading-9 font-bold tracking-[-0.02em] text-ink sm:text-[34px] sm:leading-[42px]">
+          <h1 className="text-[26px] leading-8 font-bold tracking-[-0.02em] text-ink text-balance sm:text-[34px] sm:leading-[42px]">
             {dict.hero.title}
           </h1>
           <p className="max-w-[680px] text-base leading-[26px] text-body text-pretty">

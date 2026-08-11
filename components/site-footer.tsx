@@ -10,7 +10,7 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
 
   return (
     <footer id="contact" className="bg-ink px-4 pt-[72px] pb-10 text-line sm:px-6 lg:px-10">
-      <div className="mx-auto grid max-w-[1240px] grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-12">
+      <div className="mx-auto grid max-w-[1240px] grid-cols-[repeat(auto-fit,minmax(min(240px,100%),1fr))] gap-12">
         <div className="flex flex-col gap-3">
           <span className="text-2xl font-bold tracking-[-0.02em] text-white">
             VOXERA

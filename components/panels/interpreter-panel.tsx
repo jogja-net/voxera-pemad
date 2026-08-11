@@ -85,7 +85,7 @@ export function InterpreterPanel({
         onChange={(event) => form.setLanguage(event.target.value)}
       />
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-[18px]">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(240px,100%),1fr))] gap-[18px]">
         <TextField
           id="interpreter-date"
           label={t.dateLabel}

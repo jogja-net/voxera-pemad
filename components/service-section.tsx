@@ -37,7 +37,7 @@ export function ServiceSection({ dict }: { dict: Dictionary }) {
         role="tabpanel"
         aria-labelledby={tabId(active)}
         tabIndex={0}
-        className="animate-panel-in mt-7 rounded-xl border border-line bg-white p-6 shadow-panel sm:p-8 lg:px-11 lg:py-10"
+        className="animate-panel-in mt-7 rounded-xl border border-line bg-white p-5 shadow-panel sm:p-8 lg:px-11 lg:py-10"
       >
         {active === "validation" && (
           <ValidationPanel form={validation} dict={dict} />

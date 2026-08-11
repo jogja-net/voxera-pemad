@@ -16,6 +16,7 @@ export const en: Dictionary = {
     clientPortal: "Client Portal",
     contact: "Contact Us",
     switchLanguage: "Switch language to Indonesian",
+    menu: "Menu",
   },
 
   hero: {
