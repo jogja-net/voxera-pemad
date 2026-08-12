@@ -52,19 +52,48 @@ export function useValidationForm() {
   const [fileA, setFileA] = useState<File | null>(null);
   const [fileB, setFileB] = useState<File | null>(null);
   const [scanned, setScanned] = useState(true);
-  const { status, run } = useAsyncAction();
+  const { status, run, reset } = useAsyncAction();
 
   const files = [fileA, fileB].filter((file): file is File => Boolean(file));
 
+  // Changing an input invalidates the result card, which reads the live file
+  // count — otherwise it would keep claiming success while describing files the
+  // run never saw.
+  const selectA = useCallback(
+    (next: File | null) => {
+      setFileA(next);
+      reset();
+    },
+    [reset],
+  );
+
+  const selectB = useCallback(
+    (next: File | null) => {
+      setFileB(next);
+      reset();
+    },
+    [reset],
+  );
+
+  const updateScanned = useCallback(
+    (next: boolean) => {
+      setScanned(next);
+      reset();
+    },
+    [reset],
+  );
+
   return {
     fileA,
-    setFileA,
+    setFileA: selectA,
     fileB,
-    setFileB,
+    setFileB: selectB,
     scanned,
-    setScanned,
+    setScanned: updateScanned,
     fileCount: files.length,
     words: estimateWords(files),
+    /** Nothing to validate until at least one document is attached. */
+    canSubmit: files.length > 0,
     status,
     run,
   };
@@ -82,7 +111,17 @@ export function useGenerationForm() {
     [reset],
   );
 
-  return { prompt, setPrompt: updatePrompt, words: countWords(prompt), status, run };
+  const words = countWords(prompt);
+
+  return {
+    prompt,
+    setPrompt: updatePrompt,
+    words,
+    /** An empty brief has nothing to generate from. */
+    canSubmit: words > 0,
+    status,
+    run,
+  };
 }
 
 export function useTranslationForm() {
@@ -90,7 +129,15 @@ export function useTranslationForm() {
   const [toLang, setToLang] = useState("en");
   const [file, setFile] = useState<File | null>(null);
   const [contextFile, setContextFile] = useState<File | null>(null);
-  const { status, run } = useAsyncAction();
+  const { status, run, reset } = useAsyncAction();
+
+  const selectFile = useCallback(
+    (next: File | null) => {
+      setFile(next);
+      reset();
+    },
+    [reset],
+  );
 
   return {
     fromLang,
@@ -98,10 +145,12 @@ export function useTranslationForm() {
     toLang,
     setToLang,
     file,
-    setFile,
+    setFile: selectFile,
     contextFile,
     setContextFile,
     words: estimateWords([file]),
+    /** The context attachment is optional; the document itself is not. */
+    canSubmit: file !== null,
     status,
     run,
   };
@@ -113,13 +162,17 @@ export function useSwornForm() {
   const [file, setFile] = useState<File | null>(null);
   const [hardCopy, setHardCopy] = useState(false);
   const [calculated, setCalculated] = useState(false);
-  const { status, run } = useAsyncAction();
+  const { status, run, reset } = useAsyncAction();
 
   // A new file invalidates the previous estimate.
-  const selectFile = useCallback((next: File | null) => {
-    setFile(next);
-    setCalculated(false);
-  }, []);
+  const selectFile = useCallback(
+    (next: File | null) => {
+      setFile(next);
+      setCalculated(false);
+      reset();
+    },
+    [reset],
+  );
 
   const pages = calculated ? estimatePages(file) : 0;
   const { translation, total } = swornCost(pages, hardCopy);
@@ -134,10 +187,14 @@ export function useSwornForm() {
     hardCopy,
     setHardCopy,
     calculate: () => setCalculated(true),
+    /** There is nothing to measure until a document is attached. */
+    canCalculate: file !== null,
     pages,
     etaTier: etaForPages(pages),
     translationCost: translation,
     totalCost: total,
+    /** Ordering follows the quote, so the estimate has to exist first. */
+    canSubmit: pages > 0,
     status,
     run,
   };

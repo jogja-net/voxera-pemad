@@ -95,6 +95,15 @@
 }
 
 @layer base {
+  /*
+    The header is `sticky top-0` at 72px tall, so an untreated jump to #services
+    or #faq parks the section title underneath it. 88px clears the header and
+    leaves a little breathing room above the heading.
+  */
+  html {
+    scroll-padding-top: 88px;
+  }
+
   body {
     background: var(--vx-surface);
     color: var(--vx-ink);
@@ -109,5 +118,17 @@
   :focus-visible {
     outline: 2px solid var(--vx-focus);
     outline-offset: 2px;
+  }
+
+  /* The panel slide-in and every hover transition are decoration only. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }

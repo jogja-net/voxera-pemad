@@ -73,7 +73,9 @@ export function SwornPanel({
         helper={t.uploadHelper}
       />
 
-      <OutlineButton onClick={form.calculate}>{t.calculate}</OutlineButton>
+      <OutlineButton onClick={form.calculate} disabled={!form.canCalculate}>
+        {t.calculate}
+      </OutlineButton>
 
       <div className="flex flex-col gap-4 rounded-lg border border-line px-6 py-[22px]">
         <div className="flex justify-between gap-4">
@@ -135,7 +137,10 @@ export function SwornPanel({
         </div>
       </div>
 
-      <PrimaryButton onClick={form.run} disabled={form.status === "running"}>
+      <PrimaryButton
+        onClick={form.run}
+        disabled={form.status === "running" || !form.canSubmit}
+      >
         {label}
       </PrimaryButton>
     </div>

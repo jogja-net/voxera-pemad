@@ -10,6 +10,13 @@ import { FaqSection } from "@/components/blocks/faq-section";
 import { StructuredData } from "@/components/blocks/structured-data";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 
+/**
+ * The footer prints the current year, which a purely static prerender would
+ * freeze at whatever year the last deploy happened in. Revalidating daily keeps
+ * the page CDN-cached while letting the date roll over on its own.
+ */
+export const revalidate = 86400;
+
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();

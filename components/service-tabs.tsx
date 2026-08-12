@@ -71,7 +71,8 @@ export function ServiceTabs({
 
   return (
     <div
-      id="services"
+      // No id here: the wrapping <section> already owns the #services anchor,
+      // and a second element with that id makes the document invalid.
       ref={listRef}
       role="tablist"
       aria-label={dict.tabs.ariaLabel}
@@ -89,7 +90,9 @@ export function ServiceTabs({
             type="button"
             role="tab"
             aria-selected={isActive}
-            aria-controls={panelId(key)}
+            // Only the open panel is mounted, so pointing at it from an
+            // unselected tab would reference an element that is not there.
+            aria-controls={isActive ? panelId(key) : undefined}
             tabIndex={isActive ? 0 : -1}
             onClick={() => onSelect(key)}
             onKeyDown={(event) => handleKeyDown(event, index)}

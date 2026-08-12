@@ -62,7 +62,10 @@ export function ValidationPanel({
         value={formatNumber(form.words, dict.locale)}
       />
 
-      <PrimaryButton onClick={form.run} disabled={form.status === "running"}>
+      <PrimaryButton
+        onClick={form.run}
+        disabled={form.status === "running" || !form.canSubmit}
+      >
         {label}
       </PrimaryButton>
 

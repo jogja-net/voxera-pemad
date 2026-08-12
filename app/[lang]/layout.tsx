@@ -2,7 +2,15 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
-import { LOCALES, LOCALE_TAGS, getDictionary, hasLocale, otherLocale } from "@/lib/i18n";
+import {
+  DEFAULT_LOCALE,
+  LOCALES,
+  LOCALE_TAGS,
+  getDictionary,
+  hasLocale,
+  otherLocale,
+} from "@/lib/i18n";
+import { SITE_URL } from "@/lib/config";
 
 const THEME_INIT_SCRIPT = `try{var t=localStorage.getItem("voxera-theme"),d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d)}catch(e){}`;
 
@@ -33,14 +41,21 @@ export async function generateMetadata({
   const dict = getDictionary(lang);
 
   return {
+    // Without a base, the relative URLs below are emitted verbatim and
+    // `og:url` becomes an unresolvable "/id".
+    metadataBase: new URL(SITE_URL),
     title: dict.meta.title,
     description: dict.meta.description,
     keywords: dict.meta.keywords,
     alternates: {
       canonical: `/${lang}`,
-      languages: Object.fromEntries(
-        LOCALES.map((locale) => [LOCALE_TAGS[locale], `/${locale}`]),
-      ),
+      languages: {
+        ...Object.fromEntries(
+          LOCALES.map((locale) => [LOCALE_TAGS[locale], `/${locale}`]),
+        ),
+        // Indonesian is the fallback the proxy sends unmatched visitors to.
+        "x-default": `/${DEFAULT_LOCALE}`,
+      },
     },
     openGraph: {
       title: dict.meta.title,
@@ -70,6 +85,15 @@ export default async function RootLayout({
     <html
       lang={lang}
       className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
+      /*
+        THEME_INIT_SCRIPT adds `dark` to this element before the first paint, so
+        the class list never matches what the server rendered. Without this,
+        React treats it as a hydration error and rebuilds the DOM from the
+        server payload — which strips `dark` again and leaves a light page with
+        the toggle stuck claiming dark. See the Next.js guide "Preventing flash
+        before hydration".
+      */
+      suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />

@@ -20,7 +20,12 @@ export function WhyVoxera({ dict }: { dict: Dictionary }) {
       aria-labelledby="why-voxera-title"
       className="mt-16 sm:mt-20"
     >
-      <SectionHeading eyebrow={t.eyebrow} title={t.title} intro={t.intro} />
+      <SectionHeading
+        titleId="why-voxera-title"
+        eyebrow={t.eyebrow}
+        title={t.title}
+        intro={t.intro}
+      />
 
       <div className="mt-7 grid grid-cols-[repeat(auto-fit,minmax(min(240px,100%),1fr))] gap-[18px]">
         {points.map((point, index) => {

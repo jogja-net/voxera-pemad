@@ -20,7 +20,7 @@ export function OutlineButton({
   return (
     <button
       type="button"
-      className={`h-12 w-full cursor-pointer rounded border border-brand bg-panel text-[15px] font-semibold text-brand transition-colors hover:bg-[rgba(0,71,187,0.06)] dark:hover:bg-brand-light/15 ${className}`}
+      className={`h-12 w-full cursor-pointer rounded border border-brand bg-panel text-[15px] font-semibold text-brand transition-colors hover:bg-[rgba(0,71,187,0.06)] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:bg-panel dark:hover:bg-brand-light/15 ${className}`}
       {...props}
     />
   );

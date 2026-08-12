@@ -43,6 +43,10 @@ export function etaForPages(pages: number): EtaTier {
 }
 
 export function swornCost(pages: number, hardCopy: boolean) {
+  // With no pages there is no quote yet. Adding the hard-copy fee on its own
+  // would show a "Total Rp 50.000" next to an empty page count.
+  if (!pages) return { translation: 0, total: 0 };
+
   const translation = pages * PRICE_PER_PAGE;
   return { translation, total: translation + (hardCopy ? HARD_COPY_FEE : 0) };
 }

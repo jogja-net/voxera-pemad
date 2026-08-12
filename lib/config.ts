@@ -5,6 +5,24 @@
  */
 export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
 
+/**
+ * Absolute origin used as `metadataBase`. Open Graph requires fully qualified
+ * URLs — without this, `openGraph.url` ships as a bare "/id" and no scraper
+ * (WhatsApp, Facebook, LinkedIn) can resolve it.
+ *
+ * `VERCEL_PROJECT_PRODUCTION_URL` is the project's production domain and is set
+ * on every Vercel deployment, previews included, so share cards always point at
+ * production. Set NEXT_PUBLIC_SITE_URL to override it with a custom domain.
+ */
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
+
+/** Sworn translation requests are handled on the client portal. */
+export const SWORN_PORTAL_URL = "https://ocr.pemad.my.id/login";
+
 export function buildWhatsAppLink(message: string): string {
   if (!WHATSAPP_NUMBER) return "#contact";
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

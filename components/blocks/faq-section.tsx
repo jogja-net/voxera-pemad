@@ -11,7 +11,7 @@ export function FaqSection({ dict }: { dict: Dictionary }) {
 
   return (
     <section id="faq" aria-labelledby="faq-title" className="mt-16 sm:mt-20">
-      <SectionHeading eyebrow={t.eyebrow} title={t.title} />
+      <SectionHeading titleId="faq-title" eyebrow={t.eyebrow} title={t.title} />
 
       <div className="mt-7 flex flex-col gap-3">
         {t.items.map((item, index) => {
@@ -39,16 +39,20 @@ export function FaqSection({ dict }: { dict: Dictionary }) {
                   />
                 </button>
               </h3>
-              {isOpen && (
-                <div
-                  id={`faq-panel-${index}`}
-                  role="region"
-                  aria-labelledby={`faq-button-${index}`}
-                  className="border-t border-line px-5 pt-3 pb-5"
-                >
-                  <p className="text-sm leading-[22px] text-body">{item.a}</p>
-                </div>
-              )}
+              {/*
+                Kept mounted and toggled with `hidden` so the `aria-controls`
+                above always resolves — a collapsed answer that is absent from
+                the DOM leaves the reference dangling.
+              */}
+              <div
+                id={`faq-panel-${index}`}
+                role="region"
+                aria-labelledby={`faq-button-${index}`}
+                hidden={!isOpen}
+                className="border-t border-line px-5 pt-3 pb-5"
+              >
+                <p className="text-sm leading-[22px] text-body">{item.a}</p>
+              </div>
             </div>
           );
         })}
