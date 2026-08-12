@@ -20,9 +20,9 @@ export const id = {
 
   nav: {
     services: "Layanan",
-    help: "Bantuan & Dukungan",
-    clientPortal: "Portal Klien",
-    contact: "Hubungi Kami",
+    help: "Bantuan",
+    clientPortal: "Portal",
+    contact: "Hubungi",
     switchLanguage: "Ganti bahasa ke Bahasa Inggris",
     menu: "Menu",
     themeToggle: "Ganti tema warna",
