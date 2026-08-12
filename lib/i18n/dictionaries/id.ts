@@ -15,7 +15,25 @@ export const id = {
   meta: {
     title: "Voxera — Solusi Bahasa & Dokumen Cerdas",
     description:
-      "Validasi dokumen bertenaga AI, smart generation, penerjemahan tersumpah, hingga interpreter profesional. Voxera by PT PéMad International Transearch.",
+      "Jasa penerjemah tersumpah, legalisasi dokumen, terjemahan dokumen resmi, validasi bertenaga AI, smart generation, hingga interpreter profesional. Voxera by PT PéMad International Transearch.",
+    keywords: [
+      "jasa penerjemah tersumpah",
+      "penerjemah tersumpah",
+      "legalisasi dokumen",
+      "terjemahan dokumen resmi",
+      "jasa penerjemah bahasa",
+      "translator tersumpah",
+      "jasa interpreter",
+      "validasi dokumen AI",
+    ],
+  },
+
+  org: {
+    name: "Voxera",
+    company: "PT PéMad International Transearch",
+    streetAddress:
+      "Ruko Trimukti Square, Jl. Kaliurang Km. 10, Jl. Ngalangan Raya No. 8-10",
+    telephone: "(0274) 7377040",
   },
 
   nav: {
@@ -172,6 +190,97 @@ export const id = {
     whatsappLanguage: "Bahasa: {language}.",
     whatsappDate: "Tanggal: {date}.",
     whatsappDuration: "Durasi: {duration}.",
+  },
+
+  info: {
+    eyebrow: "LAYANAN RESMI & BERSERTIFIKAT",
+    title: "Mengenal Layanan Penerjemah Tersumpah Voxera",
+    body1:
+      "Dokumen legal dan resmi seperti ijazah, akta kelahiran, akta pendirian perusahaan, hingga surat keputusan wajib diterjemahkan oleh penerjemah tersumpah (sworn translator). Tim Voxera memiliki tim dengan sertifikasi resmi sehingga hasil terjemahan Anda siap digunakan untuk keperluan legalisasi dokumen, pendaftaran ke instansi pendidikan, hingga pengurusan visa dan perizinan di kedutaan besar.",
+    body2:
+      "Setiap dokumen tersumpah kami kerjakan dengan teliti agar sesuai kaidah hukum dan istilah resmi. Anda cukup mengunggah dokumen, menghitung estimasi biaya secara otomatis, lalu menerima hasil akhir langsung ke email tanpa perlu datang ke kantor.",
+    ctaLabel: "Ajukan Terjemahan Tersumpah",
+  },
+
+  docTypes: {
+    eyebrow: "DOKUMEN YANG KAMI TANGANI",
+    title: "Dokumen Resmi untuk Berbagai Kebutuhan",
+    intro:
+      "Kami melayani penerjemahan tersumpah dan reguler untuk beragam dokumen pribadi, korporat, dan hukum yang membutuhkan pengesahan resmi.",
+    personalTitle: "Dokumen Pribadi",
+    personalItems: [
+      "Ijazah & Transkrip Nilai",
+      "Akta Kelahiran & Akta Cerai",
+      "Kartu Keluarga & KTP",
+      "Buku Nikah & Surat Nikah",
+      "Surat Keterangan Catatan Kepolisian",
+    ],
+    corporateTitle: "Dokumen Korporat",
+    corporateItems: [
+      "Akta Pendirian Perusahaan",
+      "NIB, SIUP & TDP",
+      "Kontrak Kerja & Perjanjian",
+      "Surat Keputusan & Perizinan",
+      "Dokumen Notaris & Korporasi",
+    ],
+    legalTitle: "Dokumen Hukum",
+    legalItems: [
+      "Putusan Pengadilan",
+      "Surat Kuasa",
+      "Sertifikat & Sertifikasi",
+      "Surat Perjanjian Hukum",
+      "Dokumen Legalitas Lainnya",
+    ],
+  },
+
+  whyUs: {
+    eyebrow: "MENGAPA MEMILIH VOXERA",
+    title: "Mitra Terpercaya untuk Dokumen Global",
+    intro:
+      "Kami memadukan teknologi AI dengan keahlian penerjemah profesional agar dokumen Anda akurat, resmi, dan diakui.",
+    certifiedTitle: "Tim Tersertifikasi Resmi",
+    certifiedBody:
+      "Penerjemah kami memiliki sertifikasi resmi, sehingga hasil terjemahan diakui untuk legalisasi dan keperluan resmi.",
+    emailTitle: "Hasil Langsung ke Email",
+    emailBody:
+      "Dokumen yang selesai langsung dikirim ke email Anda, tanpa perlu mengunjungi kantor.",
+    priorityTitle: "Layanan Prioritas",
+    priorityBody:
+      "Butuh cepat? Hubungi admin setelah pemesanan untuk layanan prioritas yang lebih singkat.",
+    onlineTitle: "Online & Offline",
+    onlineBody:
+      "Layanan dapat diakses dari mana saja — cocok untuk klien di dalam maupun luar negeri.",
+  },
+
+  faq: {
+    eyebrow: "PERTANYAAN UMUM",
+    title: "Pertanyaan yang Sering Diajukan",
+    items: [
+      {
+        q: "Berapa lama proses pengerjaan terjemahan tersumpah?",
+        a: "Estimasi selesai tergantung jumlah halaman dan antrean pesanan, rata-rata 2–3 hari kerja untuk dokumen pendek hingga 6–8 hari kerja untuk dokumen panjang. Anda juga dapat meminta layanan prioritas melalui admin.",
+      },
+      {
+        q: "Bagaimana cara menghitung biaya terjemahan?",
+        a: "Unggah dokumen pada panel Sworn Translation lalu klik Kalkulasi Estimasi Biaya. Biaya dihitung dari jumlah halaman dengan tarif per halaman, dan biaya hard copy dapat ditambahkan sesuai kebutuhan.",
+      },
+      {
+        q: "Apakah hasil terjemahan berbentuk fisik (hard copy)?",
+        a: "Hasil digital dikirim ke email Anda. Anda dapat memilih opsi pengiriman hard copy yang dikenakan biaya tambahan.",
+      },
+      {
+        q: "Apakah hasil terjemahan tersumpah diakui secara resmi?",
+        a: "Ya. Terjemahan tersumpah dikerjakan oleh tim dengan sertifikasi resmi sehingga umumnya diterima oleh kedutaan, instansi pendidikan, dan lembaga pemerintah untuk legalisasi dokumen.",
+      },
+      {
+        q: "Bahasa apa saja yang didukung untuk terjemahan?",
+        a: "Kami melayani terjemahan reguler dan tersumpah untuk berbagai bahasa seperti Inggris, Jepang, Korea, Mandarin, dan Jerman. Jika bahasa tujuan tidak tersedia, silakan hubungi kami untuk konsultasi.",
+      },
+      {
+        q: "Bagaimana jika bahasa tujuan saya tidak tersedia?",
+        a: "Silakan hubungi tim kami melalui bagian kontak atau WhatsApp. Kami akan berupaya membantu kebutuhan pasangan bahasa Anda.",
+      },
+    ],
   },
 
   footer: {

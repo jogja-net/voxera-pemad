@@ -3,6 +3,11 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { BottomNav } from "@/components/bottom-nav";
 import { ServiceSection } from "@/components/service-section";
+import { ServiceInfo } from "@/components/blocks/service-info";
+import { DocTypes } from "@/components/blocks/doc-types";
+import { WhyVoxera } from "@/components/blocks/why-voxera";
+import { FaqSection } from "@/components/blocks/faq-section";
+import { StructuredData } from "@/components/blocks/structured-data";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
@@ -29,10 +34,16 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         </div>
 
         <ServiceSection dict={dict} />
+
+        <ServiceInfo dict={dict} />
+        <DocTypes dict={dict} />
+        <WhyVoxera dict={dict} />
+        <FaqSection dict={dict} />
       </main>
 
       <SiteFooter dict={dict} />
       <BottomNav dict={dict} />
+      <StructuredData dict={dict} />
     </>
   );
 }

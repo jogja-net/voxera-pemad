@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
-import { LOCALES, LOCALE_TAGS, getDictionary, hasLocale } from "@/lib/i18n";
+import { LOCALES, LOCALE_TAGS, getDictionary, hasLocale, otherLocale } from "@/lib/i18n";
 
 const THEME_INIT_SCRIPT = `try{var t=localStorage.getItem("voxera-theme"),d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d)}catch(e){}`;
 
@@ -35,11 +35,26 @@ export async function generateMetadata({
   return {
     title: dict.meta.title,
     description: dict.meta.description,
+    keywords: dict.meta.keywords,
     alternates: {
       canonical: `/${lang}`,
       languages: Object.fromEntries(
         LOCALES.map((locale) => [LOCALE_TAGS[locale], `/${locale}`]),
       ),
+    },
+    openGraph: {
+      title: dict.meta.title,
+      description: dict.meta.description,
+      url: `/${lang}`,
+      siteName: dict.org.name,
+      type: "website",
+      locale: LOCALE_TAGS[lang],
+      alternateLocale: LOCALE_TAGS[otherLocale(lang)],
+    },
+    twitter: {
+      card: "summary",
+      title: dict.meta.title,
+      description: dict.meta.description,
     },
   };
 }

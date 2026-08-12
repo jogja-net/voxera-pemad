@@ -7,7 +7,25 @@ export const en: Dictionary = {
   meta: {
     title: "Voxera — Smart Language & Document Solutions",
     description:
-      "AI-powered document validation, smart generation, sworn translation, and professional interpreters. Voxera by PT PéMad International Transearch.",
+      "Sworn translation service, document legalization, official document translation, AI-powered validation, smart generation, and professional interpreters. Voxera by PT PéMad International Transearch.",
+    keywords: [
+      "sworn translation service",
+      "sworn translator",
+      "document legalization",
+      "official document translation",
+      "document translation service",
+      "certified translator",
+      "interpreter service",
+      "AI document validation",
+    ],
+  },
+
+  org: {
+    name: "Voxera",
+    company: "PT PéMad International Transearch",
+    streetAddress:
+      "Ruko Trimukti Square, Jl. Kaliurang Km. 10, Jl. Ngalangan Raya No. 8-10",
+    telephone: "(0274) 7377040",
   },
 
   nav: {
@@ -162,6 +180,97 @@ export const en: Dictionary = {
     whatsappLanguage: "Language: {language}.",
     whatsappDate: "Date: {date}.",
     whatsappDuration: "Duration: {duration}.",
+  },
+
+  info: {
+    eyebrow: "OFFICIAL & CERTIFIED SERVICE",
+    title: "About Voxera's Sworn Translation Service",
+    body1:
+      "Legal and official documents such as diplomas, birth certificates, company establishment deeds, and official decrees must be translated by a sworn translator. Voxera's team holds official certification, so your translation is ready for document legalization, applications to educational institutions, and visa or permit processing at embassies.",
+    body2:
+      "Every sworn translation is handled carefully to follow legal standards and official terminology. Simply upload your document, calculate the estimated cost automatically, and receive the final result directly in your email without visiting our office.",
+    ctaLabel: "Submit a Sworn Translation Request",
+  },
+
+  docTypes: {
+    eyebrow: "DOCUMENTS WE HANDLE",
+    title: "Official Documents for Every Need",
+    intro:
+      "We handle sworn and regular translation for a wide range of personal, corporate, and legal documents that require official approval.",
+    personalTitle: "Personal Documents",
+    personalItems: [
+      "Diploma & Transcripts",
+      "Birth & Divorce Certificates",
+      "Family Card & ID Card",
+      "Marriage Certificate & Book",
+      "Police Clearance Certificate",
+    ],
+    corporateTitle: "Corporate Documents",
+    corporateItems: [
+      "Company Establishment Deeds",
+      "NIB, SIUP & TDP",
+      "Employment Contracts & Agreements",
+      "Official Decrees & Permits",
+      "Notarial & Corporate Documents",
+    ],
+    legalTitle: "Legal Documents",
+    legalItems: [
+      "Court Decisions",
+      "Power of Attorney",
+      "Certificates & Licenses",
+      "Legal Agreements",
+      "Other Legal Documents",
+    ],
+  },
+
+  whyUs: {
+    eyebrow: "WHY CHOOSE VOXERA",
+    title: "Trusted Partner for Your Global Documents",
+    intro:
+      "We combine AI technology with the expertise of professional translators to keep your documents accurate, official, and recognized.",
+    certifiedTitle: "Officially Certified Team",
+    certifiedBody:
+      "Our translators hold official certification, so the results are recognized for legalization and official purposes.",
+    emailTitle: "Delivered Straight to Your Email",
+    emailBody:
+      "Completed documents are sent directly to your email, so there is no need to visit the office.",
+    priorityTitle: "Priority Service",
+    priorityBody:
+      "In a hurry? Contact the admin after ordering to unlock faster priority processing.",
+    onlineTitle: "Online & Offline",
+    onlineBody:
+      "Service is accessible from anywhere — ideal for clients at home and abroad.",
+  },
+
+  faq: {
+    eyebrow: "FREQUENTLY ASKED QUESTIONS",
+    title: "Questions Our Clients Often Ask",
+    items: [
+      {
+        q: "How long does sworn translation take?",
+        a: "Completion depends on page count and the order queue — typically 2–3 working days for short documents up to 6–8 working days for longer ones. You can also request priority service through the admin.",
+      },
+      {
+        q: "How is the translation cost calculated?",
+        a: "Upload your document in the Sworn Translation panel and click Calculate Estimated Cost. The price is based on the number of pages at a per-page rate, and a hard copy fee can be added if needed.",
+      },
+      {
+        q: "Do I receive a physical (hard copy) result?",
+        a: "The digital result is sent to your email. You may choose the hard copy shipping option, which incurs an additional fee.",
+      },
+      {
+        q: "Is the sworn translation officially recognized?",
+        a: "Yes. Sworn translations are produced by an officially certified team and are generally accepted by embassies, educational institutions, and government agencies for document legalization.",
+      },
+      {
+        q: "Which languages are supported for translation?",
+        a: "We provide regular and sworn translation for languages such as English, Japanese, Korean, Mandarin, and German. If your target language is unavailable, contact us for a consultation.",
+      },
+      {
+        q: "What if my target language is not available?",
+        a: "Please reach out through the contact section or WhatsApp. We will do our best to help with your language pairing.",
+      },
+    ],
   },
 
   footer: {
