@@ -14,19 +14,10 @@ import {
   useTranslationForm,
   useValidationForm,
 } from "@/lib/use-service-forms";
-import { SWORN_PORTAL_URL } from "@/lib/config";
 import type { Dictionary } from "@/lib/i18n";
 
 export function ServiceSection({ dict }: { dict: Dictionary }) {
   const [active, setActive] = useState<ServiceKey>("validation");
-
-  function handleSelect(key: ServiceKey) {
-    if (key === "sworn") {
-      window.open(SWORN_PORTAL_URL, "_blank", "noopener,noreferrer");
-      return;
-    }
-    setActive(key);
-  }
 
   // Form state lives here so switching tabs never discards a half-filled form.
   const validation = useValidationForm();
@@ -37,7 +28,7 @@ export function ServiceSection({ dict }: { dict: Dictionary }) {
 
   return (
     <section id="services">
-      <ServiceTabs active={active} onSelect={handleSelect} dict={dict} />
+      <ServiceTabs active={active} onSelect={setActive} dict={dict} />
 
       <div
         // Remounting on tab change replays the fade/slide-in.

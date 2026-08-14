@@ -276,6 +276,28 @@ export const en: Dictionary = {
     ],
   },
 
+  billing: {
+    title: "Billing",
+    emptyState: "No invoices yet.",
+    pendingProjectsHeading: "Projects awaiting invoicing",
+    awaitingConfirmation: "Awaiting admin confirmation",
+    statusPending: "Awaiting payment",
+    statusPaid: "Paid",
+    statusExpired: "Expired",
+    statusFailed: "Failed",
+    payCta: "Pay now",
+    adminSectionTitle: "Confirm quantity & create invoice",
+    quantityLabel: "Quantity",
+    unitWord: "words",
+    unitPage: "pages",
+    unitHour: "hours",
+    createInvoiceCta: "Create Invoice",
+    createInvoiceError: "Failed to create invoice.",
+    subtotalLabel: "Subtotal",
+    taxLabel: "VAT (11%)",
+    totalLabel: "Total",
+  },
+
   auth: {
     loginTitle: "Login to Your Account",
     loginIntro: "Please log in to continue using the service.",

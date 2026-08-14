@@ -2,12 +2,12 @@ import { LanguageSwitcher } from "./language-switcher";
 import { ThemeToggle } from "./theme-toggle";
 import { AuthNavExtras } from "./auth/auth-nav-extras";
 import { AuthTrigger } from "./auth/auth-trigger";
-import { otherLocale, type Dictionary } from "@/lib/i18n";
+import { otherLocale, type Dictionary, type Locale } from "@/lib/i18n";
 
 const navLinkClass =
   "text-sm font-medium text-body transition-colors hover:text-brand";
 
-export function SiteHeader({ dict }: { dict: Dictionary }) {
+export function SiteHeader({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const alternate = otherLocale(dict.locale);
 
   return (
@@ -36,7 +36,7 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
             opting the whole route into per-request dynamic rendering just to
             know who's logged in.
           */}
-          <AuthNavExtras dict={dict} className={navLinkClass} />
+          <AuthNavExtras dict={dict} lang={lang} className={navLinkClass} />
         </nav>
 
         <div className="flex items-center gap-2.5">

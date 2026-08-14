@@ -104,12 +104,12 @@ export default async function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
       <body>
-        <SiteHeader dict={dict} />
+        <SiteHeader dict={dict} lang={lang} />
         <main id="top">
           {children}
         </main>
         <AuthModal dict={dict} />
-        <BottomNav dict={dict} />
+        <BottomNav dict={dict} lang={lang} />
       </body>
     </html>
   );

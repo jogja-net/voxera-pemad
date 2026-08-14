@@ -14,6 +14,83 @@ export type Database = {
   }
   public: {
     Tables: {
+      invoices: {
+        Row: {
+          created_at: string
+          created_by: string
+          currency: string
+          id: string
+          paid_at: string | null
+          project_id: string
+          quantity: number
+          service_type: string
+          status: string
+          subtotal: number
+          tax_amount: number
+          total_amount: number
+          unit: string
+          unit_price: number
+          updated_at: string
+          user_id: string
+          xendit_external_id: string
+          xendit_invoice_id: string | null
+          xendit_invoice_url: string | null
+          xendit_payload: Json | null
+        }
+        Insert: {
+          created_at?: string
+          created_by: string
+          currency?: string
+          id?: string
+          paid_at?: string | null
+          project_id: string
+          quantity: number
+          service_type: string
+          status?: string
+          subtotal: number
+          tax_amount: number
+          total_amount: number
+          unit: string
+          unit_price: number
+          updated_at?: string
+          user_id: string
+          xendit_external_id: string
+          xendit_invoice_id?: string | null
+          xendit_invoice_url?: string | null
+          xendit_payload?: Json | null
+        }
+        Update: {
+          created_at?: string
+          created_by?: string
+          currency?: string
+          id?: string
+          paid_at?: string | null
+          project_id?: string
+          quantity?: number
+          service_type?: string
+          status?: string
+          subtotal?: number
+          tax_amount?: number
+          total_amount?: number
+          unit?: string
+          unit_price?: number
+          updated_at?: string
+          user_id?: string
+          xendit_external_id?: string
+          xendit_invoice_id?: string | null
+          xendit_invoice_url?: string | null
+          xendit_payload?: Json | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "invoices_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: true
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string

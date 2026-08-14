@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { useAuthModal, useSupabaseUser } from "@/lib/supabase/auth-store";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-import type { Dictionary } from "@/lib/i18n";
+import type { Dictionary, Locale } from "@/lib/i18n";
 
 type SectionKey = "services" | "help";
 
@@ -25,7 +25,7 @@ const SECTION_TARGETS: Record<SectionKey, string> = {
 const itemClass =
   "flex flex-col items-center gap-1 py-2.5 text-[11px] font-medium transition-colors cursor-pointer";
 
-export function BottomNav({ dict }: { dict: Dictionary }) {
+export function BottomNav({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const [active, setActive] = useState<SectionKey | null>("services");
   const user = useSupabaseUser(null);
   const modal = useAuthModal();
@@ -78,8 +78,18 @@ export function BottomNav({ dict }: { dict: Dictionary }) {
 
         {user && (
           <>
-            <NavPlaceholder icon={FolderKanban} label={dict.nav.project} title={dict.nav.comingSoon} />
-            <NavPlaceholder icon={Receipt} label={dict.nav.billing} title={dict.nav.comingSoon} />
+            <NavLink
+              icon={FolderKanban}
+              label={dict.nav.project}
+              href={`/${lang}/dashboard/projects`}
+              isActive={false}
+            />
+            <NavLink
+              icon={Receipt}
+              label={dict.nav.billing}
+              href={`/${lang}/dashboard/billing`}
+              isActive={false}
+            />
           </>
         )}
 
@@ -121,23 +131,5 @@ function NavLink({
       <Icon size={22} strokeWidth={isActive ? 2.2 : 1.8} aria-hidden="true" />
       <span className="line-clamp-1 px-1">{label}</span>
     </a>
-  );
-}
-
-/** Project/Billing pages don't exist yet (Phase 2/3) — disabled, not a dead link. */
-function NavPlaceholder({
-  icon: Icon,
-  label,
-  title,
-}: {
-  icon: LucideIcon;
-  label: string;
-  title: string;
-}) {
-  return (
-    <span aria-disabled title={title} className={`${itemClass} cursor-not-allowed text-faint opacity-60`}>
-      <Icon size={22} strokeWidth={1.8} aria-hidden="true" />
-      <span className="line-clamp-1 px-1">{label}</span>
-    </span>
   );
 }

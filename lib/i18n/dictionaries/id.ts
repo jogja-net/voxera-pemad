@@ -286,6 +286,28 @@ export const id = {
     ],
   },
 
+  billing: {
+    title: "Tagihan",
+    emptyState: "Belum ada tagihan.",
+    pendingProjectsHeading: "Proyek menunggu tagihan",
+    awaitingConfirmation: "Menunggu konfirmasi admin",
+    statusPending: "Menunggu pembayaran",
+    statusPaid: "Lunas",
+    statusExpired: "Kedaluwarsa",
+    statusFailed: "Gagal",
+    payCta: "Bayar sekarang",
+    adminSectionTitle: "Konfirmasi kuantitas & buat invoice",
+    quantityLabel: "Kuantitas",
+    unitWord: "kata",
+    unitPage: "halaman",
+    unitHour: "jam",
+    createInvoiceCta: "Buat Invoice",
+    createInvoiceError: "Gagal membuat invoice.",
+    subtotalLabel: "Subtotal",
+    taxLabel: "PPN (11%)",
+    totalLabel: "Total",
+  },
+
   auth: {
     loginTitle: "Masuk ke Akun Anda",
     loginIntro: "Silakan masuk untuk melanjutkan menggunakan layanan.",
