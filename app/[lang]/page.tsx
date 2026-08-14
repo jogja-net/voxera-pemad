@@ -1,13 +1,11 @@
 import { notFound } from "next/navigation";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { BottomNav } from "@/components/bottom-nav";
 import { ServiceSection } from "@/components/service-section";
 import { ServiceInfo } from "@/components/blocks/service-info";
 import { DocTypes } from "@/components/blocks/doc-types";
 import { WhyVoxera } from "@/components/blocks/why-voxera";
 import { FaqSection } from "@/components/blocks/faq-section";
 import { StructuredData } from "@/components/blocks/structured-data";
+import { SiteFooter } from "@/components/site-footer";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 
 /**
@@ -25,8 +23,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
   return (
     <>
-      <SiteHeader dict={dict} />
-
       <main
         id="top"
         className="mx-auto max-w-[1240px] px-4 pt-10 pb-[88px] sm:px-6 lg:px-10"
@@ -49,7 +45,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       </main>
 
       <SiteFooter dict={dict} />
-      <BottomNav dict={dict} />
       <StructuredData dict={dict} />
     </>
   );

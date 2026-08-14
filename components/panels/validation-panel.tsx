@@ -1,5 +1,6 @@
 "use client";
 
+import { createProject } from "@/app/actions";
 import { Check } from "lucide-react";
 import { PrimaryButton } from "@/components/ui/buttons";
 import { StatRow } from "@/components/ui/form-fields";
@@ -63,8 +64,18 @@ export function ValidationPanel({
       />
 
       <PrimaryButton
-        onClick={form.run}
+
+        onClick={() => {
+          form.run();
+          createProject(
+            "validation",
+            "Validation Project", // You might want to make this dynamic
+            null,
+            { fileA: form.fileA?.name, fileB: form.fileB?.name, scanned: form.scanned, words: form.words }
+          );
+        }}
         disabled={form.status === "running" || !form.canSubmit}
+
       >
         {label}
       </PrimaryButton>

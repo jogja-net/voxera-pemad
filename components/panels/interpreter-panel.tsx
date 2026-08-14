@@ -1,5 +1,6 @@
 "use client";
 
+import { createProject } from "@/app/actions";
 import { MessageCircle } from "lucide-react";
 import { SelectField, TextField } from "@/components/ui/form-fields";
 import { PanelHeading } from "./panel-shell";
@@ -104,6 +105,14 @@ export function InterpreterPanel({
       </div>
 
       <a
+        onClick={() => {
+          createProject(
+            "interpreter",
+            "Interpreter Project", // You might want to make this dynamic
+            enquiry,
+            { eventDate: form.eventDate, duration: form.duration, selectedLanguage: selectedLanguage }
+          );
+        }}
         href={href}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noopener noreferrer" : undefined}

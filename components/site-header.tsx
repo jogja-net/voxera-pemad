@@ -1,6 +1,11 @@
 import { LanguageSwitcher } from "./language-switcher";
 import { ThemeToggle } from "./theme-toggle";
+import { AuthNavExtras } from "./auth/auth-nav-extras";
+import { AuthTrigger } from "./auth/auth-trigger";
 import { otherLocale, type Dictionary } from "@/lib/i18n";
+
+const navLinkClass =
+  "text-sm font-medium text-body transition-colors hover:text-brand";
 
 export function SiteHeader({ dict }: { dict: Dictionary }) {
   const alternate = otherLocale(dict.locale);
@@ -22,12 +27,16 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
           >
             {dict.nav.services}
           </a>
-          <a
-            href="#contact"
-            className="text-sm font-medium text-body transition-colors hover:text-brand"
-          >
+          <a href="#contact" className={navLinkClass}>
             {dict.nav.help}
           </a>
+          {/*
+            Not server-known — auth-store.ts resolves the session client-side
+            so this page can stay statically rendered (ISR) rather than
+            opting the whole route into per-request dynamic rendering just to
+            know who's logged in.
+          */}
+          <AuthNavExtras dict={dict} className={navLinkClass} />
         </nav>
 
         <div className="flex items-center gap-2.5">
@@ -42,22 +51,14 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
             lightLabel={dict.nav.themeLight}
           />
           {/*
-            These two must appear at the same breakpoint the bottom nav
-            disappears at (md) — the bottom nav repeats them, so showing both
-            at once duplicates the CTAs.
+            Must appear at the same breakpoint the bottom nav disappears at
+            (md) — bottom-nav.tsx renders its own AuthTrigger for mobile, so
+            showing both at once would duplicate the control.
           */}
-          <a
-            href="#top"
-            className="hidden h-10 items-center rounded border border-brand px-[18px] text-sm font-semibold text-brand transition-colors hover:bg-[rgba(0,71,187,0.06)] dark:hover:bg-brand-light/15 md:inline-flex"
-          >
-            {dict.nav.clientPortal}
-          </a>
-          <a
-            href="#contact"
-            className="hidden h-10 items-center rounded bg-brand px-[18px] text-sm font-semibold text-white transition-colors hover:bg-brand-dark md:inline-flex"
-          >
-            {dict.nav.contact}
-          </a>
+          <AuthTrigger
+            dict={dict}
+            className="hidden h-10 cursor-pointer items-center rounded bg-brand px-[18px] text-sm font-semibold text-white transition-colors hover:bg-brand-dark md:inline-flex"
+          />
         </div>
       </div>
     </header>

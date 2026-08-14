@@ -39,8 +39,9 @@ export const id = {
   nav: {
     services: "Layanan",
     help: "Bantuan",
-    clientPortal: "Portal",
-    contact: "Hubungi",
+    billing: "Billing",
+    project: "Project",
+    comingSoon: "Segera hadir",
     switchLanguage: "Ganti bahasa ke Bahasa Inggris",
     menu: "Menu",
     themeToggle: "Ganti tema warna",
@@ -81,6 +82,8 @@ export const id = {
     sworn: {
       title: "Terjemahan Tersumpah",
       subtitle: "Permintaan Terjemahan Tersumpah",
+      /** Suffixed onto the accessible name; the link opens the OCR portal in a new tab. */
+      opensNewTab: "(dibuka di tab baru)",
     },
     interpreter: {
       title: "Interpreter",
@@ -281,6 +284,41 @@ export const id = {
         a: "Silakan hubungi tim kami melalui bagian kontak atau WhatsApp. Kami akan berupaya membantu kebutuhan pasangan bahasa Anda.",
       },
     ],
+  },
+
+  auth: {
+    loginTitle: "Masuk ke Akun Anda",
+    loginIntro: "Silakan masuk untuk melanjutkan menggunakan layanan.",
+    registerTitle: "Buat Akun Baru",
+    registerIntro: "Silakan daftar untuk melanjutkan menggunakan layanan.",
+    nameLabel: "Nama",
+    phoneLabel: "Nomor Telepon",
+    emailLabel: "Email",
+    passwordLabel: "Kata Sandi",
+    confirmPasswordLabel: "Konfirmasi Kata Sandi",
+    loginSubmit: "Masuk ke Akun Anda",
+    loginSubmitting: "Memproses…",
+    registerSubmit: "Buat Akun Baru",
+    registerSubmitting: "Memproses…",
+    orDivider: "ATAU",
+    googleButton: "Masuk dengan Google",
+    googleComingSoon: "Segera hadir",
+    toggleToRegisterBefore: "Belum punya akun? ",
+    toggleToRegisterLink: "Daftar di sini",
+    toggleToLoginBefore: "Sudah punya akun? ",
+    toggleToLoginLink: "Masuk di sini",
+    closeModal: "Tutup",
+    checkEmailTitle: "Periksa email Anda",
+    checkEmailBody:
+      "Kami telah mengirim tautan konfirmasi ke email Anda. Klik tautan tersebut untuk mengaktifkan akun, lalu masuk di sini.",
+    loginCta: "Masuk",
+    logoutCta: "Keluar",
+    errors: {
+      invalidCredentials: "Email atau kata sandi salah.",
+      emailInUse: "Email ini sudah terdaftar.",
+      passwordMismatch: "Konfirmasi kata sandi tidak cocok.",
+      generic: "Terjadi kesalahan. Silakan coba lagi.",
+    },
   },
 
   footer: {

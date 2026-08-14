@@ -11,6 +11,10 @@ import {
   otherLocale,
 } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/config";
+import { AuthModal } from "@/components/auth/auth-modal";
+import { SiteHeader } from "@/components/site-header";
+import { BottomNav } from "@/components/bottom-nav";
+
 
 const THEME_INIT_SCRIPT = `try{var t=localStorage.getItem("voxera-theme"),d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d)}catch(e){}`;
 
@@ -80,6 +84,7 @@ export default async function RootLayout({
 }: LayoutProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
+  const dict = getDictionary(lang);
 
   return (
     <html
@@ -98,7 +103,14 @@ export default async function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
-      <body>{children}</body>
+      <body>
+        <SiteHeader dict={dict} />
+        <main id="top">
+          {children}
+        </main>
+        <AuthModal dict={dict} />
+        <BottomNav dict={dict} />
+      </body>
     </html>
   );
 }

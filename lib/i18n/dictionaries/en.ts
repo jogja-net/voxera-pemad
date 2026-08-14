@@ -31,8 +31,9 @@ export const en: Dictionary = {
   nav: {
     services: "Services",
     help: "Help & Support",
-    clientPortal: "Client Portal",
-    contact: "Contact Us",
+    billing: "Billing",
+    project: "Project",
+    comingSoon: "Coming soon",
     switchLanguage: "Switch language to Indonesian",
     menu: "Menu",
     themeToggle: "Toggle color theme",
@@ -73,6 +74,8 @@ export const en: Dictionary = {
     sworn: {
       title: "Sworn Translation",
       subtitle: "Sworn Translation Request",
+      /** Suffixed onto the accessible name; the link opens the OCR portal in a new tab. */
+      opensNewTab: "(opens in a new tab)",
     },
     interpreter: {
       title: "Interpreter",
@@ -271,6 +274,41 @@ export const en: Dictionary = {
         a: "Please reach out through the contact section or WhatsApp. We will do our best to help with your language pairing.",
       },
     ],
+  },
+
+  auth: {
+    loginTitle: "Login to Your Account",
+    loginIntro: "Please log in to continue using the service.",
+    registerTitle: "Create a New Account",
+    registerIntro: "Please register to continue using the service.",
+    nameLabel: "Name",
+    phoneLabel: "Phone Number",
+    emailLabel: "Email",
+    passwordLabel: "Password",
+    confirmPasswordLabel: "Confirm Password",
+    loginSubmit: "Login to Your Account",
+    loginSubmitting: "Signing in…",
+    registerSubmit: "Create a New Account",
+    registerSubmitting: "Creating account…",
+    orDivider: "OR",
+    googleButton: "Login with Google",
+    googleComingSoon: "Coming soon",
+    toggleToRegisterBefore: "Don't have an account? ",
+    toggleToRegisterLink: "Register here",
+    toggleToLoginBefore: "Already have an account? ",
+    toggleToLoginLink: "Login here",
+    closeModal: "Close",
+    checkEmailTitle: "Check your email",
+    checkEmailBody:
+      "We've sent a confirmation link to your email. Click it to activate your account, then log in here.",
+    loginCta: "Login",
+    logoutCta: "Logout",
+    errors: {
+      invalidCredentials: "Incorrect email or password.",
+      emailInUse: "This email is already registered.",
+      passwordMismatch: "Password confirmation doesn't match.",
+      generic: "Something went wrong. Please try again.",
+    },
   },
 
   footer: {

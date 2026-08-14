@@ -1,5 +1,6 @@
 "use client";
 
+import { createProject } from "@/app/actions";
 import { PrimaryButton } from "@/components/ui/buttons";
 import { StatRow, TextAreaField } from "@/components/ui/form-fields";
 import { PanelHeading, ResultCard } from "./panel-shell";
@@ -36,7 +37,15 @@ export function GenerationPanel({
       />
 
       <PrimaryButton
-        onClick={form.run}
+        onClick={() => {
+          form.run();
+          createProject(
+            "generation",
+            "Generation Project", // You might want to make this dynamic
+            form.prompt,
+            { words: form.words }
+          );
+        }}
         disabled={form.status === "running" || !form.canSubmit}
       >
         {label}

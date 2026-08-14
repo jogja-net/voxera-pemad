@@ -1,5 +1,6 @@
 "use client";
 
+import { createProject } from "@/app/actions";
 import { PrimaryButton } from "@/components/ui/buttons";
 import { SelectField, StatRow } from "@/components/ui/form-fields";
 import { UploadField } from "@/components/ui/upload-field";
@@ -72,7 +73,15 @@ export function TranslationPanel({
       />
 
       <PrimaryButton
-        onClick={form.run}
+        onClick={() => {
+          form.run();
+          createProject(
+            "translation",
+            "Translation Project", // You might want to make this dynamic
+            null,
+            { fromLang: form.fromLang, toLang: form.toLang, file: form.file?.name, contextFile: form.contextFile?.name, words: form.words }
+          );
+        }}
         disabled={form.status === "running" || !form.canSubmit}
       >
         {label}
