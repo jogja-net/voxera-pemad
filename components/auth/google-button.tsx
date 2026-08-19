@@ -1,14 +1,27 @@
+"use client";
+
+import { useState } from "react";
 import { OutlineButton } from "@/components/ui/buttons";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import type { Dictionary } from "@/lib/i18n";
 
-/**
- * No Google OAuth credentials exist yet — kept as its own component so wiring
- * `supabase.auth.signInWithOAuth({ provider: "google" })` later only touches
- * this file (swap `disabled` for the real `onClick`).
- */
 export function GoogleButton({ dict }: { dict: Dictionary }) {
+  const [isLoading, setIsLoading] = useState(false);
+
+  async function handleClick() {
+    setIsLoading(true);
+    const supabase = createBrowserSupabaseClient();
+    const next = encodeURIComponent(window.location.pathname);
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: `${window.location.origin}/auth/callback?next=${next}` },
+    });
+
+    if (error) setIsLoading(false);
+  }
+
   return (
-    <OutlineButton title={dict.auth.googleComingSoon}>
+    <OutlineButton onClick={handleClick} disabled={isLoading}>
       <span className="flex items-center justify-center gap-2">
         <GoogleIcon />
         {dict.auth.googleButton}

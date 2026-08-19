@@ -146,6 +146,17 @@ unrelated — do not conflate the two.
   reliable words→pages ratio to synthesize one — the admin enters a page
   count from scratch on the billing page. Revisit if `useGenerationForm`
   starts capturing pages directly.
-- **Follow-up**: real Google OAuth once credentials exist — isolated to
-  `components/auth/google-button.tsx` (swap `disabled` for
-  `signInWithOAuth`) plus one new callback route.
+- **Google OAuth — code wired, blocked on credentials (as of 2026-08-19)**:
+  `components/auth/google-button.tsx` now calls
+  `supabase.auth.signInWithOAuth({ provider: "google" })` and
+  `app/auth/callback/route.ts` exchanges the code for a session. Clicking
+  the button currently redirects to Supabase's authorize endpoint and gets
+  rejected, because no Google OAuth Client ID/Secret has been created yet
+  and the Google provider isn't enabled in the Supabase dashboard for the
+  `voxera-pemad` project. To finish: create an OAuth 2.0 Client ID (Web
+  application) in Google Cloud Console with authorized redirect URI
+  `https://ockdlwpbftsoqkqulxdq.supabase.co/auth/v1/callback`, paste the
+  Client ID/Secret into Supabase dashboard → Authentication → Providers →
+  Google, and add `http://localhost:3000/auth/callback` +
+  `https://voxera-pemad.vercel.app/auth/callback` under Authentication →
+  URL Configuration → Redirect URLs.

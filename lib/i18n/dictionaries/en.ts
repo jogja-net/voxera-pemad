@@ -314,7 +314,6 @@ export const en: Dictionary = {
     registerSubmitting: "Creating account…",
     orDivider: "OR",
     googleButton: "Login with Google",
-    googleComingSoon: "Coming soon",
     toggleToRegisterBefore: "Don't have an account? ",
     toggleToRegisterLink: "Register here",
     toggleToLoginBefore: "Already have an account? ",

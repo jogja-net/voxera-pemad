@@ -324,7 +324,6 @@ export const id = {
     registerSubmitting: "Memproses…",
     orDivider: "ATAU",
     googleButton: "Masuk dengan Google",
-    googleComingSoon: "Segera hadir",
     toggleToRegisterBefore: "Belum punya akun? ",
     toggleToRegisterLink: "Daftar di sini",
     toggleToLoginBefore: "Sudah punya akun? ",
