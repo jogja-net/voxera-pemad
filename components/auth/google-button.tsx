@@ -8,7 +8,7 @@ import type { Dictionary } from "@/lib/i18n";
  */
 export function GoogleButton({ dict }: { dict: Dictionary }) {
   return (
-    <OutlineButton disabled title={dict.auth.googleComingSoon}>
+    <OutlineButton title={dict.auth.googleComingSoon}>
       <span className="flex items-center justify-center gap-2">
         <GoogleIcon />
         {dict.auth.googleButton}
